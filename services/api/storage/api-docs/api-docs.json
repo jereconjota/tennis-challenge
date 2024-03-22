@@ -1,0 +1,214 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tennis Tournament API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/tournaments": {
+            "get": {
+                "operationId": "d6d13007f7657d700fa0fff0acd91dac",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Error retrieving tournaments"
+                    }
+                }
+            }
+        },
+        "/tournaments/{tournament}": {
+            "get": {
+                "summary": "Get a tournament",
+                "operationId": "81e9b1ca77bf851042c79fe4fd201ecd",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "tournament id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "An int value.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Tournament not found"
+                    },
+                    "500": {
+                        "description": "Error retrieving tournament"
+                    }
+                }
+            }
+        },
+        "/tournaments/date/{date}": {
+            "get": {
+                "summary": "Get a tournaments by date",
+                "operationId": "ffdcbbce239ddc10eb6026165e6a901d",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "description": "date of start of the tournament",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "date": {
+                                "summary": "A date value.",
+                                "value": "2021-10-10T00:00:00"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Error retrieving tournament"
+                    }
+                }
+            }
+        },
+        "/tournaments/gender/{gender}": {
+            "get": {
+                "summary": "Get a tournaments by gender",
+                "operationId": "874cb1679b51549f0c4c018170ba75b9",
+                "parameters": [
+                    {
+                        "name": "gender",
+                        "in": "path",
+                        "description": "gender of the tournament",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "string": {
+                                "summary": "A gender value.",
+                                "value": "male"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Error retrieving tournament"
+                    }
+                }
+            }
+        },
+        "/tournaments/{tournament}/matches": {
+            "get": {
+                "summary": "Get a tournaments matches",
+                "operationId": "c6d668683c3ca0588ec1ba86857a4000",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "tournament id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "An int value.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Error retrieving matches"
+                    }
+                }
+            }
+        },
+        "/tournaments/{tournament}/winner": {
+            "get": {
+                "summary": "Get a tournament winner",
+                "operationId": "73f4cded9ddecf569dfef0b63a8167b9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "tournament id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "An int value.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Error retrieving winner"
+                    }
+                }
+            }
+        },
+        "/tournaments/play-tournament": {
+            "get": {
+                "summary": "Simulate a tournament",
+                "operationId": "c105536cd0239ae8ffe0d0243d19aeee",
+                "parameters": [
+                    {
+                        "name": "player_ids",
+                        "in": "path",
+                        "description": "player ids",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "array": {
+                                "summary": "An array of player ids.",
+                                "value": "[1,2,3,4]"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Error playing tournament"
+                    },
+                    "500": {
+                        "description": "Error playing tournament"
+                    }
+                }
+            }
+        }
+    }
+}

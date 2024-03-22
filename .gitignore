@@ -18,3 +18,5 @@ services/api/.fleet
 services/api/.idea
 services/api/.vscode
 .DS_Store
+services/api/resources/views/vendor/
+databases/
