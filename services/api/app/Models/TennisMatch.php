@@ -48,13 +48,13 @@ class TennisMatch extends Model
             $player_one_points = 0;
             $player_two_points = 0;
 
-            // Simular puntos hasta que un jugador alcance 6 puntos y tenga al menos 2 puntos de diferencia
+            // Simulate points until a player reaches 6 points and has at least 2 points of difference
             while (abs($player_one_points - $player_two_points) < 2 || max($player_one_points, $player_two_points) < 6) {
-                // Calcular la probabilidad de que cada jugador gane un punto
+                // Calculate the probability of each player winning a point
                 $player_one_prob = ($player_one['hability'] + $player_one['strength'] + $player_one['sprintSpeed']) / 300;
                 $player_two_prob = ($player_two['hability'] + $player_two['strength'] + $player_two['sprintSpeed']) / 300;
 
-                // Simular el resultado de un punto
+                // Simulate a point and update the score
                 if (rand(0, 100) / 100 < $player_one_prob) {
                     $player_one_points++;
                 } else {
@@ -62,17 +62,17 @@ class TennisMatch extends Model
                 }
             }
 
-            // Verificar quién ganó el set y actualizar los puntajes totales
+            // Check who won the set and update the total scores
             if ($player_one_points > $player_two_points) {
                 $player_one_score++;
             } else {
                 $player_two_score++;
             }
 
-            // Registrar el resultado del set
+            // Register the set result
             $sets[] = [$player_one_points, $player_two_points];
 
-            // Verificar si uno de los jugadores ganó dos sets
+            // Check if one of the players won two sets
             if ($player_one_score >= 2 || $player_two_score >= 2) {
                 break;
             }

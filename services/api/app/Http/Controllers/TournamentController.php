@@ -256,7 +256,7 @@ class TournamentController extends Controller
                 $activePlayers = TennisPlayer::whereIn('id', array_column($round, 'winner'))->get()->tOArray();
             }
 
-
+            // update and save the tournament data
             $tournament->brackets = $brackets;
             $tournament->end_date = now();
             $tournament->winner_id = $activePlayers[0]['id'];

@@ -32,12 +32,4 @@ class Tournament extends Model
         'winner_id',
     ];
 
-    // function to play the tournament, recieve an array of player_ids, create matches and save them, play the matches and return the winner
-
-    public function play($player_ids)
-    {
-        Log::debug('Playing tournament with players: ' . json_encode($player_ids));
-        return 'ok';
-    }
-
 }
