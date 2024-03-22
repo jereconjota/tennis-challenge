@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "7a811058-713b-4fa8-8187-a3f4a814dc18",
+		"name": "Tennis-Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2750342"
+	},
+	"item": [
+		{
+			"name": "Tennis Player",
+			"item": [
+				{
+					"name": "api/tennis-players/",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-players",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tennis-players",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"toto\",\n    \"lastname\": \"Federer\",\n    \"gender\": \"male\",\n    \"hability\": 95,\n    \"strength\": 90,\n    \"sprintSpeed\": 85,\n    \"agility\": 90\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-players",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tennis-players/{id}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-players/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-players",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tennis-players/{id}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"toto\",\n    \"lastname\": \"Federer\",\n    \"gender\": \"male\",\n    \"hability\": 95,\n    \"strength\": 90,\n    \"sprintSpeed\": 85,\n    \"agility\": 90\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-players/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-players",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tennis-players/{id}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-players/11",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-players",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tennis Match",
+			"item": [
+				{
+					"name": "api/tennis-matches",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-matches",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tennis-matches/{id}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tennis-matches/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tennis-matches",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tournaments",
+			"item": [
+				{
+					"name": "api/tournaments",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tournaments/16/matches",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"16",
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tournament/play-tournament",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"player_ids\": [15,16,17,18],\n    \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tournaments/play-tournament",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"play-tournament"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tournaments/{id}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tournaments/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tournaments/{date}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tournaments/date/2024-03-22T18:35:58",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"date",
+								"2024-03-22T18:35:58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/tournaments/{gender}",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.localhost/api/tournaments/gender/male",
+							"protocol": "http",
+							"host": [
+								"api",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"gender",
+								"male"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
