@@ -5,9 +5,9 @@
         "version": "0.1"
     },
     "paths": {
-        "/tournaments": {
+        "/api/tournaments": {
             "get": {
-                "operationId": "d6d13007f7657d700fa0fff0acd91dac",
+                "operationId": "8626d4f0c19b7c5d27dce357833b6b97",
                 "responses": {
                     "200": {
                         "description": "Success"
@@ -18,10 +18,10 @@
                 }
             }
         },
-        "/tournaments/{tournament}": {
+        "/api/tournaments/{tournament}": {
             "get": {
                 "summary": "Get a tournament",
-                "operationId": "81e9b1ca77bf851042c79fe4fd201ecd",
+                "operationId": "b44b99a211d160d7c1fa08e4817906d4",
                 "parameters": [
                     {
                         "name": "id",
@@ -52,10 +52,10 @@
                 }
             }
         },
-        "/tournaments/date/{date}": {
+        "/api/tournaments/date/{date}": {
             "get": {
                 "summary": "Get a tournaments by date",
-                "operationId": "ffdcbbce239ddc10eb6026165e6a901d",
+                "operationId": "0cf78352f40b4d2208cc5f1f2f06862d",
                 "parameters": [
                     {
                         "name": "date",
@@ -83,10 +83,10 @@
                 }
             }
         },
-        "/tournaments/gender/{gender}": {
+        "/api/tournaments/gender/{gender}": {
             "get": {
                 "summary": "Get a tournaments by gender",
-                "operationId": "874cb1679b51549f0c4c018170ba75b9",
+                "operationId": "5722b2b1436ea8a91667a7d00d8f15cd",
                 "parameters": [
                     {
                         "name": "gender",
@@ -114,10 +114,10 @@
                 }
             }
         },
-        "/tournaments/{tournament}/matches": {
+        "/api/tournaments/{tournament}/matches": {
             "get": {
                 "summary": "Get a tournaments matches",
-                "operationId": "c6d668683c3ca0588ec1ba86857a4000",
+                "operationId": "466586aa3f6489d91b841f09e3f3620d",
                 "parameters": [
                     {
                         "name": "id",
@@ -145,10 +145,10 @@
                 }
             }
         },
-        "/tournaments/{tournament}/winner": {
+        "/api/tournaments/{tournament}/winner": {
             "get": {
                 "summary": "Get a tournament winner",
-                "operationId": "73f4cded9ddecf569dfef0b63a8167b9",
+                "operationId": "200f68b4f6019d35cfddea633826044e",
                 "parameters": [
                     {
                         "name": "id",
@@ -176,27 +176,35 @@
                 }
             }
         },
-        "/tournaments/play-tournament": {
-            "get": {
+        "/api/tournaments/play-tournament": {
+            "post": {
                 "summary": "Simulate a tournament",
-                "operationId": "c105536cd0239ae8ffe0d0243d19aeee",
-                "parameters": [
-                    {
-                        "name": "player_ids",
-                        "in": "path",
-                        "description": "player ids",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "array": {
-                                "summary": "An array of player ids.",
-                                "value": "[1,2,3,4]"
+                "operationId": "c05b255d11153ad7bd00be352bf3b4b7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "player_ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        },
+                                        "example": "[1,2,3,4]"
+                                    },
+                                    "gender": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
                             }
                         }
                     }
-                ],
+                },
                 "responses": {
                     "200": {
                         "description": "Success"

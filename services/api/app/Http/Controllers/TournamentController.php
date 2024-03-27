@@ -19,7 +19,7 @@ class TournamentController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/tournaments",
+     *     path="/api/tournaments",
      *  @OA\Response(response=200,description="Success"),
      *  @OA\Response(response=500,description="Error retrieving tournaments")
      * )
@@ -37,7 +37,7 @@ class TournamentController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/tournaments/{tournament}",
+     *     path="/api/tournaments/{tournament}",
      *   summary="Get a tournament",
      * @OA\Parameter(
      *         description="tournament id",
@@ -64,7 +64,7 @@ class TournamentController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/tournaments/date/{date}",
+     *     path="/api/tournaments/date/{date}",
      * summary="Get a tournaments by date",
      * @OA\Parameter(
      *         description="date of start of the tournament",
@@ -91,7 +91,7 @@ class TournamentController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/tournaments/gender/{gender}",
+     *     path="/api/tournaments/gender/{gender}",
      *  summary="Get a tournaments by gender",
      *  @OA\Parameter(
      *         description="gender of the tournament",
@@ -118,7 +118,7 @@ class TournamentController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/tournaments/{tournament}/matches",
+     *     path="/api/tournaments/{tournament}/matches",
      * summary="Get a tournaments matches",
      * @OA\Parameter(
      *         description="tournament id",
@@ -145,7 +145,7 @@ class TournamentController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/tournaments/{tournament}/winner",
+     *     path="/api/tournaments/{tournament}/winner",
      * summary="Get a tournament winner",
      * @OA\Parameter(
      *         description="tournament id",
@@ -172,21 +172,23 @@ class TournamentController extends Controller
     }
 
     /**
-     * @OA\Get(
-     *     path="/tournaments/play-tournament",
+     * @OA\Post(
+     *     path="/api/tournaments/play-tournament",
      * summary="Simulate a tournament",
-     * @OA\Parameter(
-     *         description="player ids",
-     *         name="player_ids",
-     *         in="path",
-     *         required=true,
-     *         @OA\Schema(type="string"),
-     *         @OA\Examples(example="array", value="[1,2,3,4]", summary="An array of player ids."),
-     *     ),
+     * @OA\RequestBody(
+     *        required=true,
+     *       @OA\JsonContent(
+    *         type="object",
+     *         @OA\Property(property="player_ids", type="array", @OA\Items(type="integer"), example="[1,2,3,4]"),   
+     *        @OA\Property(property="gender", type="string"),
+     *       @OA\Property(property="name", type="string"),
+     *     )
+     * ),
      * @OA\Response(response=200,description="Success"),
      * @OA\Response(response=400,description="Error playing tournament"),
-     * @OA\Response(response=500,description="Error playing tournament")   
+     * @OA\Response(response=500,description="Error playing tournament")
      * )
+     * 
      */
 
     public function playTournament(Request $request)
