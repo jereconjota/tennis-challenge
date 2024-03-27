@@ -7,7 +7,12 @@ Simple simulador de torneo de tenis
 ### Instalacion Docker Compose
 
 ```bash
-cd services
+cd tennis-challenge/services/api
+
+cp .env.example .env
+
+composer install
+
 docker-compose up -d
 ```
 
@@ -20,7 +25,7 @@ docker ps
 Correr migraciones y seeders
 
 ```bash
-cd services
+cd tennis-challenge/services/api
 
 docker exec -ti services-api-1 /bin/sh
 
@@ -30,6 +35,8 @@ php artisan db:seed TennisPlayerSeeder
 ```
 
 ---
+
+Ahora se puede acceder y probar la API en [http://api.localhost](http://api.localhost)
 
 
 ### Postman Collection
