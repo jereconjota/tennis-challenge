@@ -1,12 +1,15 @@
 
 
-## Tennis-tournament Challenge
+# Tennis-tournament Challenge
 
 Simple simulador de torneo de tenis
 
-### Instalacion Docker Compose
+## Instalacion con Docker Compose
 
 ```bash
+
+git clone ...
+
 cd tennis-challenge/services/api
 
 cp .env.example .env
@@ -38,17 +41,19 @@ php artisan db:seed TennisPlayerSeeder
 
 Ahora se puede acceder y probar la API en [http://api.localhost](http://api.localhost)
 
-
-### Postman Collection
-
-[Descargar Postman Collection](services/api/Tennis-Challenge.postman_collection.json)
-
 ---
 
 
 ### Documentacion 
 
 [http://api.localhost/api/documentation](http://api.localhost/api/documentation)
+
+---
+
+### Postman Collection
+
+[Descargar Postman Collection](services/api/Tennis-Challenge.postman_collection.json)
+
 
 ---
 
@@ -62,3 +67,20 @@ docker exec -ti services-api-1 /bin/sh
 
 php artisan test
 ```
+
+---
+
+<br />
+<br /> 
+
+
+## URL produccion test
+
+
+[https://tennis-tournament-api-production-5f6a.up.railway.app/](https://tennis-tournament-api-production-5f6a.up.railway.app/)
+
+* [/api/tennis-players](https://tennis-tournament-api-production-5f6a.up.railway.app/api/tennis-players)
+
+* [/api/tournaments](https://tennis-tournament-api-production-5f6a.up.railway.app/api/tournaments)
+
+- [/api/tournaments/{tournament}/matches](https://tennis-tournament-api-production-5f6a.up.railway.app/api/tournaments/1/matches)
