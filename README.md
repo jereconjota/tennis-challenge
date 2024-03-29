@@ -4,6 +4,9 @@
 
 Simple simulador de torneo de tenis
 
+<br />
+<br /> 
+
 ## Instalacion con Docker Compose
 
 ```bash
@@ -37,7 +40,8 @@ php artisan migrate
 php artisan db:seed TennisPlayerSeeder
 ```
 
----
+<br />
+
 
 Ahora se puede acceder y probar la API en [http://api.localhost](http://api.localhost)
 
@@ -83,4 +87,7 @@ php artisan test
 
 * [/api/tournaments](https://tennis-tournament-api-production-5f6a.up.railway.app/api/tournaments)
 
-- [/api/tournaments/{tournament}/matches](https://tennis-tournament-api-production-5f6a.up.railway.app/api/tournaments/1/matches)
+* [/api/tournaments/{tournament}/matches](https://tennis-tournament-api-production-5f6a.up.railway.app/api/tournaments/1/matches)
+
+
+[Documentation](https://tennis-tournament-api-production-5f6a.up.railway.app/api/documentation)
